@@ -10,7 +10,7 @@ export default function InputScreen({ onSubmit, initialError = "" }) {
   const [comps, setComps] = useState(["", "", "", "", ""]);
   const [loc, setLoc] = useState("India");
   const [err, setErr] = useState(initialError);
-  const [loading, setLoading] = useState(false);
+  
 
   const updateComp = (i, v) =>
     setComps((c) => { const n = [...c]; n[i] = v; return n; });
@@ -184,25 +184,9 @@ export default function InputScreen({ onSubmit, initialError = "" }) {
 
           {/* Submit */}
           <button
-            type="submit" disabled={loading}
-            style={{ width: "100%", marginTop: 20, height: 52,
-              background: loading ? "var(--ink3)" : "var(--ink)",
-              color: "#fff", border: "none", borderRadius: 10,
-              fontSize: 15, fontWeight: 600, cursor: loading ? "not-allowed" : "pointer",
-              display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
-              letterSpacing: "-0.01em", transition: "background 0.2s" }}
-            onMouseEnter={(e) => { if (!loading) e.currentTarget.style.background = "#2563eb"; }}
-            onMouseLeave={(e) => { if (!loading) e.currentTarget.style.background = "var(--ink)"; }}
-          >
-            {loading ? (
-              <>
-                <div style={{ width: 18, height: 18, border: "2px solid rgba(255,255,255,0.3)",
-                  borderTopColor: "#fff", borderRadius: "50%",
-                  animation: "spin 0.7s linear infinite" }} />
-                Sending…
-              </>
-            ) : (
-              "Run SEO Analysis →"
+            <button type="submit" style={{width:"100%",marginTop:20,height:52,background:"#0f172a",color:"#fff",border:"none",borderRadius:10,fontSize:15,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:10,transition:"background 0.2s"}} onMouseEnter={e=>e.currentTarget.style.background="#2563eb"} onMouseLeave={e=>e.currentTarget.style.background="#0f172a"}>
+  Run SEO Analysis →
+</button>"
             )}
           </button>
         </form>
