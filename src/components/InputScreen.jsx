@@ -9,7 +9,7 @@ export default function InputScreen({ onSubmit, initialError = "" }) {
   const [primary, setPrimary] = useState("");
   const [comps, setComps] = useState(["", "", "", "", ""]);
   const [loc, setLoc] = useState("India");
-  const [err, setErr] = useState(initialError);h
+  const [err, setErr] = useState(initialError);
   const [loading, setLoading] = useState(false);
 
   const updateComp = (i, v) =>
@@ -29,7 +29,7 @@ export default function InputScreen({ onSubmit, initialError = "" }) {
 
       {/* ── Left dark panel ── */}
       <div style={{
-        background: "linear-gradient(160deg, #0f172a 0%, #1e293b 100%)",
+        background: "linear-gradient(160deg, #0f172a 0%, #1e293b 1h00%)",
         padding: "52px 48px", display: "flex", flexDirection: "column",
         justifyContent: "space-between", position: "relative", overflow: "hidden",
       }}>
