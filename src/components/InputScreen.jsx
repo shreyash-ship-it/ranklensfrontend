@@ -9,19 +9,19 @@ export default function InputScreen({ onSubmit, initialError = "" }) {
   const [primary, setPrimary] = useState("");
   const [comps, setComps] = useState(["", "", "", "", ""]);
   const [loc, setLoc] = useState("India");
-  const [err, setErr] = useState(initialError);
+  const [err, setErr] = useState(initialError);h
   const [loading, setLoading] = useState(false);
 
   const updateComp = (i, v) =>
     setComps((c) => { const n = [...c]; n[i] = v; return n; });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!primary.trim()) { setErr("Please enter your website URL."); return; }
     setErr("");
-    setLoading(true);
-    await onSubmit(primary.trim(), comps.filter(Boolean), loc);
-    setLoading(false);
+    
+    onSubmit(primary.trim(), comps.filter(Boolean), loc);
+    
   };
 
   return (
